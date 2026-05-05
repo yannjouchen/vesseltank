@@ -41,6 +41,11 @@
         
         .tab-content { flex: 1; padding: 20px; position: relative; display: flex; justify-content: center; align-items: flex-start; background-color: var(--bg-main); overflow: auto; }
         
+        .graphic-canvas {
+            width: 1400px; position: relative; background-color: #ffffff; border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 0, 0, 0.06) 1px, transparent 1px);
+            background-size: 100px 100px; background-position: 0 0; margin-bottom: 20px;
+        }
 
         .title-badge { background-color: var(--accent-purple); color: white; padding: 6px 16px; border-radius: 20px; font-weight: bold; letter-spacing: 0.5px; box-shadow: 0 2px 4px rgba(181, 123, 157, 0.3); }
 
@@ -132,130 +137,66 @@
 
 
     <div class="main-content">
-        
-
-        <div class="tab-content" id="tab-main-engine" style="display: flex;">
-            <div class="graphic-canvas" style="height: 800px;">
+      <div class="graphic-canvas" style="height: 1200px;">
                 
 
-                <div style="position: absolute; top: 70px; left: 350px; z-index: 10; display: flex; align-items: center; background-color: #f8fafc; border: 2px solid #cbd5e1; padding: 12px 30px; border-radius: 50px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); gap: 20px;">
-                    <div style="text-align: right;">
-                        <div style="font-size: 11px; color: var(--text-muted); font-weight: bold; letter-spacing: 1px;">DEP</div>
-                        <div style="font-size: 22px; font-weight: 900; color: var(--text-main); font-family: 'Segoe UI Black', Impact, sans-serif; letter-spacing: 1px;">---</div>
-                    </div>
-                    <div style="display: flex; flex-direction: column; align-items: center; color: var(--accent-blue);">
-                        <span style="font-size: 10px; font-weight: bold; margin-bottom: -2px; letter-spacing: 1px;">VOYAGE</span>
-                        <svg width="80" height="15" viewBox="0 0 80 15">
-                            <line x1="0" y1="10" x2="70" y2="10" stroke="currentColor" stroke-width="2" stroke-dasharray="5 3"/>
-                            <polygon points="70,5 80,10 70,15" fill="currentColor"/>
-                        </svg>
-                    </div>
-                    <div style="text-align: left;">
-                        <div style="font-size: 11px; color: var(--text-muted); font-weight: bold; letter-spacing: 1px;">DEST</div>
-                        <div style="font-size: 22px; font-weight: 900; color: var(--normal); font-family: 'Segoe UI Black', Impact, sans-serif; letter-spacing: 1px;">---</div>
-                    </div>
-                </div>
-                
-                <div class="instr-box normal" style="top: 50px; left: 1100px; min-width: 110px;">
-                    <span class="label">COG (對地航向)</span>
-                    <div class="val-unit"><span class="value">---</span><span class="unit">°</span></div>
-                </div>
-                <div class="instr-box normal" style="top: 50px; left: 1230px; min-width: 110px;">
-                    <span class="label">SOG (船速)</span>
-                    <div class="val-unit"><span class="value">---</span><span class="unit">kn</span></div>
-                </div>
-                <div class="instr-box normal" style="top: 110px; left: 1100px; min-width: 110px;">
-                    <span class="label">WIND (風向/力)</span>
-                    <div class="val-unit"><span class="value">---/---</span><span class="unit">kn</span></div>
-                </div>
-                <div class="instr-box normal" style="top: 110px; left: 1230px; min-width: 110px;">
-                    <span class="label">CURRENT (流)</span>
-                    <div class="val-unit"><span class="value">---/---</span><span class="unit">kn</span></div>
+                <div style="position: absolute; top: 50px; left: 100px; width: 1200px; height: 300px;">
+                    <div class="gen-block gen-body" style="top: 80px; left: 260px;"></div>
+                    <div class="gen-cylinder-tc" style="top: 50px; left: 270px;"></div><div class="gen-cylinder-tc" style="top: 50px; left: 364px;"></div><div class="gen-cylinder-tc" style="top: 50px; left: 458px;"></div>
+                    <div class="gen-block" style="top: 40px; left: 265px; width: 268px; height: 10px; background:#fff; z-index: 4;"></div>
+                    <div class="gen-cylinder-tc" style="top: 50px; left: 552px;"></div><div class="gen-cylinder-tc" style="top: 50px; left: 646px;"></div><div class="gen-cylinder-tc" style="top: 50px; left: 740px;"></div>
+                    <div class="gen-block" style="top: 40px; left: 547px; width: 268px; height: 10px; background:#fff; z-index: 4;"></div>
+                    <div class="gen-shaft-box" style="top: 150px; left: 820px;"></div>
+                    <div class="no-title" style="top: -20px; left: 885px;">NO.1</div>
+                    
+                    <div class="instr-box" style="top: 45px; left: 880px;"><span class="label">Volt</span><div class="val-unit"><span class="value">440</span><span class="unit">V</span></div></div>
+                    <div class="power-box-frame"></div>
+                    <div class="instr-box" style="top: 125px; left: 888px; min-width: 90px; border-color: transparent;"><span class="label">POWER</span><div class="val-unit"><span class="value">384</span><span class="unit">kW</span></div></div>
+                    <div class="instr-box" style="top: 180px; left: 888px; min-width: 90px; border-color: transparent;"><span class="label">Frequency</span><div class="val-unit"><span class="value">60.1</span><span class="unit">Hz</span></div></div>
+                    <div class="instr-box" style="top: -10px; left: 345px;"><span class="label">Exh. T.</span><div class="val-unit"><span class="value">420</span><span class="unit">°C</span></div></div><div class="instr-box" style="top: -10px; left: 610px;"><span class="label">Exh. T.</span><div class="val-unit"><span class="value">419</span><span class="unit">°C</span></div></div><div class="instr-box" style="top: 105px; left: 280px;"><span class="label">Exh. T.</span><div class="val-unit"><span class="value">418</span><span class="unit">°C</span></div></div><div class="instr-box" style="top: 105px; left: 405px;"><span class="label">Exh. T.</span><div class="val-unit"><span class="value">415</span><span class="unit">°C</span></div></div><div class="instr-box" style="top: 175px; left: 345px;"><span class="label">Exh. T.</span><div class="val-unit"><span class="value">416</span><span class="unit">°C</span></div></div><div class="instr-box" style="top: 105px; left: 545px;"><span class="label">Exh. T.</span><div class="val-unit"><span class="value">409</span><span class="unit">°C</span></div></div><div class="instr-box" style="top: 105px; left: 670px;"><span class="label">Exh. T.</span><div class="val-unit"><span class="value">418</span><span class="unit">°C</span></div></div><div class="instr-box" style="top: 175px; left: 610px;"><span class="label">Exh. T.</span><div class="val-unit"><span class="value">411</span><span class="unit">°C</span></div></div><div class="instr-box" style="top: -20px; left: 0px;"><span class="label">T/C out T.</span><div class="val-unit"><span class="value">381</span><span class="unit">°C</span></div></div><div class="instr-box" style="top: -20px; left: 200px;"><span class="label">T/C in T.</span><div class="val-unit"><span class="value">425</span><span class="unit">°C</span></div></div><div class="instr-box" style="top: 70px; left: 135px;"><span class="label">JCW. T.</span><div class="val-unit"><span class="value">82</span><span class="unit">°C</span></div></div><div class="instr-box" style="top: 130px; left: 135px;"><span class="label">JCW. P.</span><div class="val-unit"><span class="value">0.28</span><span class="unit">Mpa</span></div></div><div class="instr-box" style="top: 130px; left: 10px;"><span class="label">LO. T.</span><div class="val-unit"><span class="value">42</span><span class="unit">°C</span></div></div><div class="instr-box" style="top: 190px; left: 10px;"><span class="label">LO. P.</span><div class="val-unit"><span class="value">0.30</span><span class="unit">Mpa</span></div></div>
+                    <svg style="position: absolute; top: 15px; left: 120px; z-index: 5;" width="60" height="40" viewBox="0 0 60 40"><polygon points="0,0 30,20 0,40" fill="#ffffff" stroke="#334155" stroke-width="3"/><polygon points="60,0 30,20 60,40" fill="#ffffff" stroke="#334155" stroke-width="3"/></svg>
+                    <div style="color: var(--pipe-exh);"><div class="arrow-line" style="top: 38px; left: 200px; width: 55px; height: 2px;"></div><div class="arrow-head-left" style="top: 35px; left: 200px;"></div></div><div style="color: var(--pipe-exh);"><div class="arrow-line" style="top: -10px; left: 137px; width: 2px; height: 18px;"></div><div class="arrow-head-up" style="top: -15px; left: 133.5px;"></div></div><div style="color: var(--pipe-jcw);"><div class="arrow-line" style="top: 125px; left: 100px; width: 160px; height: 2px;"></div><div class="arrow-head-right" style="top: 121px; left: 255px;"></div></div><div style="color: var(--pipe-lo);"><div class="arrow-line" style="top: 185px; left: 0px; width: 260px; height: 2px;"></div><div class="arrow-head-right" style="top: 181px; left: 255px;"></div></div>
                 </div>
 
-                <div class="vector-compass-container">
-                    <svg viewBox="0 0 100 100" width="100%" height="100%">
-                        <line x1="50" y1="5" x2="50" y2="95" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/>
-                        <line x1="5" y1="50" x2="95" y2="50" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/>
-                        <circle cx="50" cy="50" r="35" fill="none" stroke="#e2e8f0" stroke-width="1"/>
-                        
-                        <text x="50" y="12" font-size="8" text-anchor="middle" fill="#64748b" font-weight="bold">N</text>
-                        <text x="88" y="53" font-size="8" text-anchor="middle" fill="#64748b" font-weight="bold">E</text>
-                        <text x="50" y="94" font-size="8" text-anchor="middle" fill="#64748b" font-weight="bold">S</text>
-                        <text x="12" y="53" font-size="8" text-anchor="middle" fill="#64748b" font-weight="bold">W</text>
-                
-                        <circle cx="50" cy="50" r="3" fill="#334155"/>
-                    </svg>
-                </div>
-                
-                <div class="compass-legend">
-                    <div><span class="legend-dot" style="background-color: #ef4444;"></span>航向/速</div>
-                    <div><span class="legend-dot" style="background-color: #10b981;"></span>風向</div>
-                    <div><span class="legend-dot" style="background-color: #3b82f6;"></span>水流</div>
+                <div style="position: absolute; top: 400px; left: 100px; width: 1200px; height: 300px;">
+                    <div class="gen-block gen-body" style="top: 80px; left: 260px;"></div>
+                    <div class="gen-cylinder-tc" style="top: 50px; left: 270px;"></div><div class="gen-cylinder-tc" style="top: 50px; left: 364px;"></div><div class="gen-cylinder-tc" style="top: 50px; left: 458px;"></div>
+                    <div class="gen-block" style="top: 40px; left: 265px; width: 268px; height: 10px; background:#fff; z-index: 4;"></div>
+                    <div class="gen-cylinder-tc" style="top: 50px; left: 552px;"></div><div class="gen-cylinder-tc" style="top: 50px; left: 646px;"></div><div class="gen-cylinder-tc" style="top: 50px; left: 740px;"></div>
+                    <div class="gen-block" style="top: 40px; left: 547px; width: 268px; height: 10px; background:#fff; z-index: 4;"></div>
+                    <div class="gen-shaft-box" style="top: 150px; left: 820px;"></div>
+                    <div class="no-title" style="top: -20px; left: 885px;">NO.2</div>
+                    
+                    <div class="instr-box" style="top: 45px; left: 880px;"><span class="label">Volt</span><div class="val-unit"><span class="value">440</span><span class="unit">V</span></div></div>
+                    <div class="power-box-frame"></div>
+                    <div class="instr-box" style="top: 125px; left: 888px; min-width: 90px; border-color: transparent;"><span class="label">POWER</span><div class="val-unit"><span class="value">384</span><span class="unit">kW</span></div></div>
+                    <div class="instr-box" style="top: 180px; left: 888px; min-width: 90px; border-color: transparent;"><span class="label">Frequency</span><div class="val-unit"><span class="value">60.1</span><span class="unit">Hz</span></div></div>
+                    <div class="instr-box" style="top: -10px; left: 345px;"><span class="label">Exh. T.</span><div class="val-unit"><span class="value">420</span><span class="unit">°C</span></div></div><div class="instr-box" style="top: -10px; left: 610px;"><span class="label">Exh. T.</span><div class="val-unit"><span class="value">419</span><span class="unit">°C</span></div></div><div class="instr-box" style="top: 105px; left: 280px;"><span class="label">Exh. T.</span><div class="val-unit"><span class="value">418</span><span class="unit">°C</span></div></div><div class="instr-box" style="top: 105px; left: 405px;"><span class="label">Exh. T.</span><div class="val-unit"><span class="value">415</span><span class="unit">°C</span></div></div><div class="instr-box" style="top: 175px; left: 345px;"><span class="label">Exh. T.</span><div class="val-unit"><span class="value">416</span><span class="unit">°C</span></div></div><div class="instr-box" style="top: 105px; left: 545px;"><span class="label">Exh. T.</span><div class="val-unit"><span class="value">409</span><span class="unit">°C</span></div></div><div class="instr-box" style="top: 105px; left: 670px;"><span class="label">Exh. T.</span><div class="val-unit"><span class="value">418</span><span class="unit">°C</span></div></div><div class="instr-box" style="top: 175px; left: 610px;"><span class="label">Exh. T.</span><div class="val-unit"><span class="value">411</span><span class="unit">°C</span></div></div><div class="instr-box" style="top: -20px; left: 0px;"><span class="label">T/C out T.</span><div class="val-unit"><span class="value">381</span><span class="unit">°C</span></div></div><div class="instr-box" style="top: -20px; left: 200px;"><span class="label">T/C in T.</span><div class="val-unit"><span class="value">425</span><span class="unit">°C</span></div></div><div class="instr-box" style="top: 70px; left: 135px;"><span class="label">JCW. T.</span><div class="val-unit"><span class="value">82</span><span class="unit">°C</span></div></div><div class="instr-box" style="top: 130px; left: 135px;"><span class="label">JCW. P.</span><div class="val-unit"><span class="value">0.28</span><span class="unit">Mpa</span></div></div><div class="instr-box" style="top: 130px; left: 10px;"><span class="label">LO. T.</span><div class="val-unit"><span class="value">42</span><span class="unit">°C</span></div></div><div class="instr-box" style="top: 190px; left: 10px;"><span class="label">LO. P.</span><div class="val-unit"><span class="value">0.30</span><span class="unit">Mpa</span></div></div>
+                    <svg style="position: absolute; top: 15px; left: 120px; z-index: 5;" width="60" height="40" viewBox="0 0 60 40"><polygon points="0,0 30,20 0,40" fill="#ffffff" stroke="#334155" stroke-width="3"/><polygon points="60,0 30,20 60,40" fill="#ffffff" stroke="#334155" stroke-width="3"/></svg>
+                    <div style="color: var(--pipe-exh);"><div class="arrow-line" style="top: 38px; left: 200px; width: 55px; height: 2px;"></div><div class="arrow-head-left" style="top: 35px; left: 200px;"></div></div><div style="color: var(--pipe-exh);"><div class="arrow-line" style="top: -10px; left: 137px; width: 2px; height: 18px;"></div><div class="arrow-head-up" style="top: -15px; left: 133.5px;"></div></div><div style="color: var(--pipe-jcw);"><div class="arrow-line" style="top: 125px; left: 100px; width: 160px; height: 2px;"></div><div class="arrow-head-right" style="top: 121px; left: 255px;"></div></div><div style="color: var(--pipe-lo);"><div class="arrow-line" style="top: 185px; left: 0px; width: 260px; height: 2px;"></div><div class="arrow-head-right" style="top: 181px; left: 255px;"></div></div>
                 </div>
 
-                <div class="mock-engine-front"></div>
-                <div class="mock-engine-body"></div>
-                <div class="mock-cylinder" style="left: 200px;"></div><div class="mock-cylinder" style="left: 310px;"></div><div class="mock-cylinder" style="left: 420px;"></div><div class="mock-cylinder" style="left: 530px;"></div><div class="mock-cylinder" style="left: 640px;"></div><div class="mock-cylinder" style="left: 750px;"></div>
-                <div class="mock-shaft"></div><div class="mock-bearing" style="top: 510px; left: 1000px;"></div><div class="mock-bearing" style="top: 510px; left: 1200px;"></div><div class="mock-propeller1"></div><div class="mock-propeller2"></div>
-
-                <div class="instr-box normal" style="top: 130px; left: 940px;"><span class="label">E/R T.</span><div class="val-unit"><span class="value">---</span><span class="unit">°C</span></div></div>
-                <div class="instr-box normal" style="top: 60px; left: 40px;"><span class="label">M/E REV</span><div class="val-unit"><span class="value">---</span><span class="unit">min-1</span></div></div>
-                <div class="instr-box normal" style="top: 120px; left: 40px;"><span class="label">M/E FUEL INDEX</span><div class="val-unit"><span class="value">---</span><span class="unit">%</span></div></div>
-                <div class="instr-box normal" style="top: 250px; left: 945px;"><span class="label">M/E T/C REV</span><div class="val-unit"><span class="value">---</span><span class="unit">min-1</span></div></div>
-                <div class="instr-box normal" style="top: 220px; left: 33px;"><span class="label">J.C.W. IN T.</span><div class="val-unit"><span class="value">---</span><span class="unit">°C</span></div></div>
-                <div class="instr-box normal" style="top: 290px; left: 33px;"><span class="label">J.C.W. IN P.</span><div class="val-unit"><span class="value">---</span><span class="unit">MPa</span></div></div>
-                
-                <div style="color: var(--pipe-jcw);"><div class="arrow-line" style="top: 280px; left: 60px; width: 130px; height: 4px;"></div><div class="arrow-line" style="top: 280px; left: 185px; width: 4px; height: 30px;"></div><div class="arrow-head-down" style="top: 310px; left: 184.5px;"></div></div>
-
-                <div class="instr-box normal" style="top: 405px; left: 40px;"><span class="label">FO Inlet T.</span><div class="val-unit"><span class="value">---</span><span class="unit">°C</span></div></div>
-                <div class="instr-box normal" style="top: 470px; left: 40px;"><span class="label">FO Inlet P.</span><div class="val-unit"><span class="value">---</span><span class="unit">MPa</span></div></div>
-                <div style="color: #ef4444;"><div class="arrow-line" style="top: 460px; left: 50px; width: 120px; height: 4px;"></div><div class="arrow-head-right" style="top: 457px; left: 165px;"></div></div>
-
-                <div class="instr-box normal" style="top: 555px; left: 40px;"><span class="label">M/E L.O. IN T.</span><div class="val-unit"><span class="value">---</span><span class="unit">°C</span></div></div>
-                <div class="instr-box normal" style="top: 615px; left: 40px;"><span class="label">M/E L.O. IN P.</span><div class="val-unit"><span class="value">---</span><span class="unit">MPa</span></div></div>
-                <div style="color: var(--pipe-lo);"><div class="arrow-line" style="top: 610px; left: 40px; width: 130px; height: 4px;"></div><div class="arrow-head-right" style="top: 607px; left: 165px;"></div></div>
-
-                <div class="instr-box normal" style="top: 200px; left: 185px;"><span class="label">#1 Exh T.</span><div class="val-unit"><span class="value">---</span><span class="unit">°C</span></div></div><div class="instr-box normal" style="top: 400px; left: 185px;"><span class="label">#1 SCAV AIR</span><div class="val-unit"><span class="value">---</span><span class="unit">°C</span></div></div><div class="instr-box normal" style="top: 340px; left: 185px;"><span class="label">#1 JCW T.</span><div class="val-unit"><span class="value">---</span><span class="unit">°C</span></div></div><div class="instr-box normal" style="top: 550px; left: 185px;"><span class="label">#1 L.O. T.</span><div class="val-unit"><span class="value">---</span><span class="unit">°C</span></div></div>
-                <div class="instr-box normal" style="top: 200px; left: 295px;"><span class="label">#2 Exh T.</span><div class="val-unit"><span class="value">---</span><span class="unit">°C</span></div></div><div class="instr-box normal" style="top: 400px; left: 295px;"><span class="label">#2 SCAV AIR</span><div class="val-unit"><span class="value">---</span><span class="unit">°C</span></div></div><div class="instr-box normal" style="top: 340px; left: 295px;"><span class="label">#2 JCW T.</span><div class="val-unit"><span class="value">---</span><span class="unit">°C</span></div></div><div class="instr-box normal" style="top: 550px; left: 295px;"><span class="label">#2 L.O. T.</span><div class="val-unit"><span class="value">---</span><span class="unit">°C</span></div></div>
-                <div class="instr-box normal" style="top: 200px; left: 405px;"><span class="label">#3 Exh T.</span><div class="val-unit"><span class="value">---</span><span class="unit">°C</span></div></div><div class="instr-box normal" style="top: 400px; left: 405px;"><span class="label">#3 SCAV AIR</span><div class="val-unit"><span class="value">---</span><span class="unit">°C</span></div></div><div class="instr-box normal" style="top: 340px; left: 405px;"><span class="label">#3 JCW T.</span><div class="val-unit"><span class="value">---</span><span class="unit">°C</span></div></div><div class="instr-box normal" style="top: 550px; left: 405px;"><span class="label">#3 L.O. T.</span><div class="val-unit"><span class="value">---</span><span class="unit">°C</span></div></div>
-                <div class="instr-box normal" style="top: 200px; left: 515px;"><span class="label">#4 Exh T.</span><div class="val-unit"><span class="value">---</span><span class="unit">°C</span></div></div><div class="instr-box normal" style="top: 400px; left: 515px;"><span class="label">#4 SCAV AIR</span><div class="val-unit"><span class="value">---</span><span class="unit">°C</span></div></div><div class="instr-box normal" style="top: 340px; left: 515px;"><span class="label">#4 JCW T.</span><div class="val-unit"><span class="value">---</span><span class="unit">°C</span></div></div><div class="instr-box normal" style="top: 550px; left: 515px;"><span class="label">#4 L.O. T.</span><div class="val-unit"><span class="value">---</span><span class="unit">°C</span></div></div>
-                <div class="instr-box normal" style="top: 200px; left: 625px;"><span class="label">#5 Exh T.</span><div class="val-unit"><span class="value">---</span><span class="unit">°C</span></div></div><div class="instr-box normal" style="top: 400px; left: 625px;"><span class="label">#5 SCAV AIR</span><div class="val-unit"><span class="value">---</span><span class="unit">°C</span></div></div><div class="instr-box normal" style="top: 340px; left: 625px;"><span class="label">#5 JCW T.</span><div class="val-unit"><span class="value">---</span><span class="unit">°C</span></div></div><div class="instr-box normal" style="top: 550px; left: 625px;"><span class="label">#5 L.O. T.</span><div class="val-unit"><span class="value">---</span><span class="unit">°C</span></div></div>
-                <div class="instr-box normal" style="top: 200px; left: 735px;"><span class="label">#6 Exh T.</span><div class="val-unit"><span class="value">---</span><span class="unit">°C</span></div></div><div class="instr-box normal" style="top: 400px; left: 735px;"><span class="label">#6 SCAV AIR</span><div class="val-unit"><span class="value">---</span><span class="unit">°C</span></div></div><div class="instr-box normal" style="top: 340px; left: 735px;"><span class="label">#6 JCW T.</span><div class="val-unit"><span class="value">---</span><span class="unit">°C</span></div></div><div class="instr-box normal" style="top: 550px; left: 735px;"><span class="label">#6 L.O. T.</span><div class="val-unit"><span class="value">---</span><span class="unit">°C</span></div></div>
-
-                <div class="instr-box normal" style="top: 560px; left: 980px;"><span class="label">FW P/P OUT</span><div class="val-unit"><span class="value">---</span><span class="unit">MPa</span></div></div>
-                <div class="instr-box normal" style="top: 450px; left: 970px;"><span class="label">Mid Brg T.</span><div class="val-unit"><span class="value">---</span><span class="unit">°C</span></div></div>
-                <div class="instr-box normal" style="top: 380px; left: 1110px;"><span class="label">#1 STERN BRG T.</span><div class="val-unit"><span class="value">---</span><span class="unit">°C</span></div></div>
-                <div class="instr-box normal" style="top: 450px; left: 1110px;"><span class="label">#2 STERN BRG T.</span><div class="val-unit"><span class="value">---</span><span class="unit">°C</span></div></div>
-                <div class="instr-box normal" style="top: 710px; left: 1230px;"><span class="label">SEA T.</span><div class="val-unit"><span class="value">---</span><span class="unit">°C</span></div></div>
-                <div class="instr-box normal" style="top: 60px; left: 185px;"><span class="label">#1 AIR TANK.</span><div class="val-unit"><span class="value">---</span><span class="unit">Mpa</span></div></div>
-                <div class="instr-box normal" style="top: 120px; left: 185px;"><span class="label">#2 AIR TANK.</span><div class="val-unit"><span class="value">---</span><span class="unit">Mpa</span></div></div>
-
-                <div style="position: absolute; top: 185px; left: 885px; display: flex; align-items: center; gap: 5px; z-index: 20;">
-                    <div style="width: 0; height: 0; border-top: 30px solid transparent; border-bottom: 30px solid transparent; border-left: 35px solid var(--pipe-exh); position: relative;"><div style="position: absolute; left: -31px; top: -21px; width: 0; height: 0; border-top: 21px solid transparent; border-bottom: 21px solid transparent; border-left: 24px solid #ffffff;"></div></div>
-                    <div style="width: 0; height: 0; border-top: 30px solid transparent; border-bottom: 30px solid transparent; border-right: 35px solid var(--pipe-air); position: relative;"><div style="position: absolute; right: -31px; top: -21px; width: 0; height: 0; border-top: 21px solid transparent; border-bottom: 21px solid transparent; border-right: 24px solid #ffffff;"></div></div>
+                <div style="position: absolute; top: 800px; left: 100px; width: 1200px; height: 300px;">
+                    <div class="gen-block gen-body" style="top: 80px; left: 260px;"></div>
+                    <div class="gen-cylinder-tc" style="top: 50px; left: 270px;"></div><div class="gen-cylinder-tc" style="top: 50px; left: 364px;"></div><div class="gen-cylinder-tc" style="top: 50px; left: 458px;"></div>
+                    <div class="gen-block" style="top: 40px; left: 265px; width: 268px; height: 10px; background:#fff; z-index: 4;"></div>
+                    <div class="gen-cylinder-tc" style="top: 50px; left: 552px;"></div><div class="gen-cylinder-tc" style="top: 50px; left: 646px;"></div><div class="gen-cylinder-tc" style="top: 50px; left: 740px;"></div>
+                    <div class="gen-block" style="top: 40px; left: 547px; width: 268px; height: 10px; background:#fff; z-index: 4;"></div>
+                    <div class="gen-shaft-box" style="top: 150px; left: 820px;"></div>
+                    <div class="no-title" style="top: -20px; left: 885px;">NO.3</div>
+                    
+                    <div class="instr-box" style="top: 45px; left: 880px;"><span class="label">Volt</span><div class="val-unit"><span class="value">440</span><span class="unit">V</span></div></div>
+                    <div class="power-box-frame"></div>
+                    <div class="instr-box" style="top: 125px; left: 888px; min-width: 90px; border-color: transparent;"><span class="label">POWER</span><div class="val-unit"><span class="value">384</span><span class="unit">kW</span></div></div>
+                    <div class="instr-box" style="top: 180px; left: 888px; min-width: 90px; border-color: transparent;"><span class="label">Frequency</span><div class="val-unit"><span class="value">60.1</span><span class="unit">Hz</span></div></div>
+                    <div class="instr-box" style="top: -10px; left: 345px;"><span class="label">Exh. T.</span><div class="val-unit"><span class="value">420</span><span class="unit">°C</span></div></div><div class="instr-box" style="top: -10px; left: 610px;"><span class="label">Exh. T.</span><div class="val-unit"><span class="value">419</span><span class="unit">°C</span></div></div><div class="instr-box" style="top: 105px; left: 280px;"><span class="label">Exh. T.</span><div class="val-unit"><span class="value">418</span><span class="unit">°C</span></div></div><div class="instr-box" style="top: 105px; left: 405px;"><span class="label">Exh. T.</span><div class="val-unit"><span class="value">415</span><span class="unit">°C</span></div></div><div class="instr-box" style="top: 175px; left: 345px;"><span class="label">Exh. T.</span><div class="val-unit"><span class="value">416</span><span class="unit">°C</span></div></div><div class="instr-box" style="top: 105px; left: 545px;"><span class="label">Exh. T.</span><div class="val-unit"><span class="value">409</span><span class="unit">°C</span></div></div><div class="instr-box" style="top: 105px; left: 670px;"><span class="label">Exh. T.</span><div class="val-unit"><span class="value">418</span><span class="unit">°C</span></div></div><div class="instr-box" style="top: 175px; left: 610px;"><span class="label">Exh. T.</span><div class="val-unit"><span class="value">411</span><span class="unit">°C</span></div></div><div class="instr-box" style="top: -20px; left: 0px;"><span class="label">T/C out T.</span><div class="val-unit"><span class="value">381</span><span class="unit">°C</span></div></div><div class="instr-box" style="top: -20px; left: 200px;"><span class="label">T/C in T.</span><div class="val-unit"><span class="value">425</span><span class="unit">°C</span></div></div><div class="instr-box" style="top: 70px; left: 135px;"><span class="label">JCW. T.</span><div class="val-unit"><span class="value">82</span><span class="unit">°C</span></div></div><div class="instr-box" style="top: 130px; left: 135px;"><span class="label">JCW. P.</span><div class="val-unit"><span class="value">0.28</span><span class="unit">Mpa</span></div></div><div class="instr-box" style="top: 130px; left: 10px;"><span class="label">LO. T.</span><div class="val-unit"><span class="value">42</span><span class="unit">°C</span></div></div><div class="instr-box" style="top: 190px; left: 10px;"><span class="label">LO. P.</span><div class="val-unit"><span class="value">0.30</span><span class="unit">Mpa</span></div></div>
+                    <svg style="position: absolute; top: 15px; left: 120px; z-index: 5;" width="60" height="40" viewBox="0 0 60 40"><polygon points="0,0 30,20 0,40" fill="#ffffff" stroke="#334155" stroke-width="3"/><polygon points="60,0 30,20 60,40" fill="#ffffff" stroke="#334155" stroke-width="3"/></svg>
+                    <div style="color: var(--pipe-exh);"><div class="arrow-line" style="top: 38px; left: 200px; width: 55px; height: 2px;"></div><div class="arrow-head-left" style="top: 35px; left: 200px;"></div></div><div style="color: var(--pipe-exh);"><div class="arrow-line" style="top: -10px; left: 137px; width: 2px; height: 18px;"></div><div class="arrow-head-up" style="top: -15px; left: 133.5px;"></div></div><div style="color: var(--pipe-jcw);"><div class="arrow-line" style="top: 125px; left: 100px; width: 160px; height: 2px;"></div><div class="arrow-head-right" style="top: 121px; left: 255px;"></div></div><div style="color: var(--pipe-lo);"><div class="arrow-line" style="top: 185px; left: 0px; width: 260px; height: 2px;"></div><div class="arrow-head-right" style="top: 181px; left: 255px;"></div></div>
                 </div>
 
-                <div class="pipe-exh-me" style="top: 270px; left: 810px; width: 50px; height: 4px;"></div><div class="pipe-exh-me" style="top: 215px; left: 860px; width: 4px; height: 59px;"></div><div style="color: var(--pipe-exh);"><div class="arrow-head-right" style="top: 212px; left: 865px;"></div></div>
-                <div class="pipe-exh-me" style="top: 70px; left: 900px; width: 4px; height: 110px;"></div><div style="color: var(--pipe-exh);"><div class="arrow-head-up" style="top: 65px; left: 898.5px;"></div></div>
-                <div class="pipe-air-me" style="top: 245px; left: 935px; width: 4px; height: 215px;"></div>
-                <div class="pipe-air-me" style="top: 456px; left: 840px; width: 95px; height: 4px;"></div><div style="color: var(--pipe-air);"><div class="arrow-head-left" style="top: 453px; left: 835px;"></div></div>
-                <div class="pipe-air-me" style="top: 540px; left: 840px; width: 100px; height: 4px;"></div><div style="color: var(--pipe-air);"><div class="arrow-head-left" style="top: 537px; left: 835px;"></div></div>
-                <div class="pipe-air-me" style="top: 600px; left: 840px; width: 100px; height: 4px;"></div><div style="color: var(--pipe-air);"><div class="arrow-head-left" style="top: 597px; left: 835px;"></div></div>
-
-                <div class="instr-box normal" style="top: 280px; left: 810px;"><span class="label">M/E EXH GAS T/C IN</span><div class="val-unit"><span class="value">---</span><span class="unit">°C</span></div></div>
-                <div class="instr-box normal" style="top: 60px; left: 740px;"><span class="label">M/E EXH GAS T/C OUT</span><div class="val-unit"><span class="value">---</span><span class="unit">°C</span></div></div>
-                <div class="instr-box normal" style="top: 390px; left: 855px;"><span class="label">M/E SCAV AIR</span><div class="val-unit"><span class="value">---</span><span class="unit">MPa</span></div></div>
-                <div class="instr-box normal" style="top: 545px; left: 865px;"><span class="label">M/E START AIR</span><div class="val-unit"><span class="value">---</span><span class="unit">MPa</span></div></div>
-                <div class="instr-box normal" style="top: 615px; left: 865px;"><span class="label">M/E CONT AIR</span><div class="val-unit"><span class="value">---</span><span class="unit">MPa</span></div></div>
-
-                <div class="u-pipe-sw" style="top: 620px; left: 1110px;"></div><div class="instr-box normal" style="top: 710px; left: 1115px;"><span class="label">SW PUMP OUT P.</span><div class="val-unit"><span class="value">---</span><span class="unit">MPa</span></div></div>
-                <div class="u-pipe-fw" style="top: 620px; left: 1065px;"></div><div class="instr-box normal" style="top: 710px; left: 965px;"><span class="label">CENTRAL COOLER FW</span><div class="val-unit"><span class="value">---</span><span class="unit">°C</span></div></div>
             </div>
-        </div>
-
-        
 
     </div>
+
 </body>
 </html>
